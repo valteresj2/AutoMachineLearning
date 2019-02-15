@@ -1,0 +1,70 @@
+---
+title: "Tutorial Automated Classification Binary."
+output: html_document
+---
+
+Bem vindo ao Automatização de Classificação Binária, com esta ferramenta o usuário gera modelos de machine learning e regras de forma automatizada e simples. Os modelos de classificação
+existentes são:
+
+- MLP (Multi Layer Perceptron)
+
+- GBM (Gradient Boosting Machine)
+
+- XGBoost (Extreme Gradient Boosting)
+
+Para a geração de regras a técnica utlizada é uma arvore de decisão, as ecolhas dos nós tem a respeito de acordo o lift e a massa minima determinada pelo usuário.
+Na ferramenta se encontra cinco abas vamos para elas:
+
+1 - UpLoad Dataset: Nesta aba o usuário realiza a inserção do dado de treinamento, teste e produção, caso só tenha a tabela de treinamento é só carregar ela na ferramenta e o processo 
+automatizado já realiza a divisão aleatoria estratificada em duas novas base de dados treinamento e teste a base de produção no processo de modelagem é utilizada para avaliar a aderência
+do modelo. Outro ponto importante caso a base de dados não tenha a variável chave, nesta aba se encontra um botão para adicionar uma variável chave, é necessario ter uma variável chave.
+
+2 -  Select features: Neste ponto o usuário seleciona as variáveis alvo,chave e as explicativas, para selecionar as variáveis explicativas existem duas caixas que é para as variáveis 
+numéricas e categóricas, outro ponto importante é a caixa de "Analyse Variables" ao selecionar a variável gera uma tabela de bivariada, nesta tabela você verifica se a variável é numerica ou categorica, analisa o
+comportamento em relação ao alvo, quantidade de valores ausentes, desempenho com o Risco Relativo, Ganho de Informação, KS e Entropia.
+
+3 - Induction Rules: Aqui é realizado a geração de regras, vamos apresentar cada caixa dessa aba:
+
+
+     Minimum quantity per leaf: Quantidade minima por folha da arvore.
+	 
+	 Maximum division of the tree: Quantidade máxima que o usuário deseja que árvore desça o nível. 
+	 
+	 Add value lift of the target: Valor mínimo do lift, por exemplo, suponha que uma população tenha uma taxa de resposta média de 5%, mas um determinado modelo (ou regra) identificou um segmento com uma taxa de resposta de 20%. Então esse segmento teria um aumento de 4,0 (20% / 5%). O valor default é 1,1.
+	 
+	 Select Class Target: Selecionar a classe do alvo como objetivo.
+		
+	 Multiply Rules: Selecionar uma variável caso o usuário queira gera regras para cada classe dessa variável.
+	 
+	 Save Results in Format: Salvar os resultados no  formato R ou SQL SAP HANA.
+	 
+	 Name Project: Nome do projeto.
+	 
+	 Go Rules: Iniciar o gerador de regras.
+	 
+4 - Automated Classification: Item de geração do modelo de classificação binária.
+	
+	Percentage of Training: Percentual para realizar a divisão de treinamento e teste, caso o usuário não tenha carregado a base de teste em UpLoad Dataset.
+	
+	Select Class Target: Selecionar a classe do alvo como objetivo.
+	
+	Apply Transformation Adherence: Aplicação de transformação nas variáveis explicativas para aderência entre o teste e produção.
+	
+	Multiply Rules: Selecionar uma variável caso o usuário queira gera modelos para cada classe dessa variável.
+	
+	Save Results in Format: Salvar os resultados no  formato R ou SQL SAP HANA.
+	
+	Name Project: Nome do projeto.
+	
+	Go Train: Iniciar o modelo.
+	
+5 - Results: Analisar e baixar os resultados gerados pelos modelos e indutor de regras.
+
+    Download Model: Baixar todos os resultados do modelo.
+	
+	Download Rules: Baixar todos os resultados do Indutor de Regras.
+	
+	KS: Gráfico de Kolmogorov-Smirnov na base de teste.
+	
+	Massa X Acerto: Gráfico da quantidade de massa e acerto esperado por faixa de escore da base de teste.
+	 

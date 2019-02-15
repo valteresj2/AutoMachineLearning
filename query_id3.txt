@@ -1,0 +1,83 @@
+dados<-read.csv("C:/Users/valter.e.junior/Downloads/2014-2017_Anonymized_Simplified_Starch_v11.csv",sep=',',h=T)
+
+table(dados$ MembershipinHonoraryorProfessionalSocietiesYes)
+dados<-dados[,-1]
+if(length(which(is.na(dados$Target_Janine)==TRUE))>0)
+{
+dados<-dados[-which(is.na(dados$Target_Janine)==TRUE),]
+}
+value=c()
+cont<-0
+for(i in 1:ncol(dados))
+{
+if(length(unique(dados[,i]))==1)
+{
+cont<-cont+1
+value[cont]<-i
+}
+if((is.numeric(dados[,i])==TRUE & length(unique(dados[,i]))<5) & sum(is.na(dados[,i])==TRUE)==0 )
+{
+dados[,i]<-factor(dados[,i])
+}
+if(is.numeric(dados[,i])==TRUE & length(unique(dados[,i]))<5 & sum(is.na(dados[,i])==TRUE)>0)
+{
+dados[,i]<-factor(dados[,i])
+dados[,i]<-as.character(dados[,i])
+dados[which(is.na(dados[,i])==TRUE),i]<-'MISSING'
+dados[,i]<-factor(dados[,i])
+}
+if(is.numeric(dados[,i])!=TRUE & length(which(dados[,i]==" "))>0)
+{
+dados[,i]<-as.character(dados[,i])
+dados[which(dados[,i]==" "),i]<-'MISSING'
+dados[,i]<-factor(dados[,i])
+}
+
+if(is.numeric(dados[,i])==TRUE & length(unique(dados[,i]))>=5 )
+{
+if(length(which(table(dados[,i])/nrow(dados)>0.90))>0)
+{
+pp=table(dados[,i])/nrow(dados)
+next_value=as.numeric(names(pp)[which(pp>0.9)+ifelse(which(pp>0.9)>=length(pp),-1,1)])
+a<-c(min(dados[,i],na.rm=T),as.numeric(names(pp)[which(pp>0.9)]),next_value,max(dados[,i],na.rm=T))
+a<-unique(a)
+}else{
+a<-unique(quantile(na.omit(dados[,i]),prob=seq(0,1,by=0.2)))
+}
+
+z <- cut(dados[,i],breaks=as.numeric(a),include.lowest = TRUE,right=FALSE,dig.lab = 10)
+dados[,i]<-factor(z)
+if(sum(is.na(dados[,i])==TRUE)>0)
+{
+dados[,i]<-as.character(dados[,i])
+dados[which(is.na(dados[,i])==TRUE),i]<-'MISSING'
+dados[,i]<-factor(dados[,i])
+}
+}
+
+
+}
+
+if(length(value)>0)
+{
+dados<-dados[,-value]
+}
+alvo<-dados[,'Target_Janine']
+dados<-dados[,-which(names(dados)=='Target_Janine')]
+dados$Target_Janine<-factor(alvo)
+
+source("C:/Users/valter.e.junior/Downloads/ID3_1.R")
+source("C:/Users/valter.e.junior/Downloads/regras_1.R")
+source("C:/Users/valter.e.junior/Downloads/redundancia.R")
+
+regras_full<-regras(Target_Janine~.,dados3=dados,alvo="Target_Janine",bom="1",minl=0.8,maxl=1.2,massa=0.01)
+
+write.table(regras_full,"C:/Users/valter.e.junior/Documents/Documentos/regras_geral.csv",sep=";",col.names=T,row.names=F,dec=",")
+
+formula=Target_Janine~.
+dados3=dados
+alvo="Target_Janine"
+bom="1"
+minl=0.8
+maxl=1.2
+massa=0.01
