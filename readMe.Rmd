@@ -70,20 +70,158 @@ comportamento em relação ao alvo, quantidade de valores ausentes, desempenho c
 	
 6 - Install packages:
 
-#install.packages("shinydashboard")
-#install.packages("shiny")
-#install.packages("data.table")
-#install.packages("DT")
-#install.packages("shinycssloaders")
-#install.packages("shinyjs")
-#install.packages("ggplot2")
-#install.packages("xlsx")
-#install.packages("Hmisc")
-#install.packages("gbm")
-#install.packages("xgboost")
-#install.packages("unbalanced")
-#install.packages("caret")
-#install.packages("stringr")
-#install.packages("openxlsx")
-#install.packages("ReporteRs")
+                        Package   Version
+abind                     abind     1.4-5
+acepack                 acepack     1.4.1
+ada                         ada     2.0-5
+adabag                   adabag       4.1
+assertthat           assertthat     0.2.0
+backports             backports     1.1.1
+base64enc             base64enc     0.1-3
+BBmisc                   BBmisc      1.11
+BH                           BH  1.65.0-1
+bigmemory             bigmemory    4.5.19
+bigmemory.sri     bigmemory.sri     0.1.3
+bindr                     bindr     0.1.1
+bindrcpp               bindrcpp     0.2.2
+bizdays                 bizdays     1.0.5
+broom                     broom     0.4.4
+car                         car     2.1-5
+caret                     caret    6.0-80
+checkmate             checkmate     1.8.5
+cmprsk                   cmprsk     2.2-7
+colorspace           colorspace     1.3-2
+crayon                   crayon     1.3.4
+crosstalk             crosstalk     1.0.0
+curl                       curl       3.2
+CVST                       CVST     0.2-1
+data.table           data.table    1.11.4
+ddalpha                 ddalpha     1.3.2
+DEoptimR               DEoptimR     1.0-8
+devtools               devtools    1.13.5
+dichromat             dichromat     2.0-0
+digest                   digest    0.6.12
+dimRed                   dimRed     0.1.0
+doParallel           doParallel    1.0.11
+dplyr                     dplyr     0.7.4
+DRR                         DRR     0.0.3
+DT                           DT       0.4
+e1071                     e1071     1.6-8
+Epi                         Epi      2.19
+etm                         etm     0.6-2
+evaluate               evaluate    0.10.1
+fasttime               fasttime     1.0-2
+FNN                         FNN       1.1
+foreach                 foreach     1.4.3
+Formula                 Formula     1.2-2
+gamlss                   gamlss     5.0-8
+gamlss.data         gamlss.data     5.0-1
+gamlss.dist         gamlss.dist     5.0-5
+gbm                         gbm     2.1.3
+geometry               geometry     0.3-6
+ggplot2                 ggplot2     3.0.0
+git2r                     git2r    0.21.0
+glue                       glue     1.2.0
+gower                     gower     0.1.2
+gridExtra             gridExtra       2.3
+gtable                   gtable     0.2.0
+highr                     highr       0.6
+Hmisc                     Hmisc     4.1-1
+htmlTable             htmlTable    1.11.2
+htmltools             htmltools     0.3.6
+htmlwidgets         htmlwidgets       1.0
+httpuv                   httpuv     1.4.5
+httr                       httr     1.3.1
+ipred                     ipred     0.9-6
+iterators             iterators     1.0.8
+jsonlite               jsonlite       1.5
+kernlab                 kernlab    0.9-25
+knitr                     knitr      1.20
+labeling               labeling       0.3
+later                     later     0.7.3
+latticeExtra       latticeExtra    0.6-28
+lava                       lava     1.6.1
+lazyeval               lazyeval     0.2.0
+lme4                       lme4    1.1-13
+lubridate             lubridate     1.7.4
+magic                     magic     1.5-8
+magrittr               magrittr       1.5
+markdown               markdown       0.8
+MatrixModels       MatrixModels     0.4-1
+memoise                 memoise     1.1.0
+mime                       mime       0.5
+minqa                     minqa     1.2.4
+mlbench                 mlbench     2.1-1
+mlr                         mlr      2.11
+mnormt                   mnormt     1.5-5
+ModelMetrics       ModelMetrics     1.1.0
+munsell                 munsell     0.4.3
+neuralnet             neuralnet      1.33
+nloptr                   nloptr     1.0.4
+numDeriv               numDeriv  2016.8-1
+openssl                 openssl     1.0.1
+parallelMap         parallelMap       1.3
+parallelSVM         parallelSVM     0.1-9
+ParamHelpers       ParamHelpers      1.10
+partykit               partykit     1.1-1
+pbkrtest               pbkrtest     0.4-7
+pkgconfig             pkgconfig     2.0.1
+plogr                     plogr     0.2.0
+plyr                       plyr     1.8.4
+pmml                       pmml     1.5.2
+pROC                       pROC    1.10.0
+prodlim                 prodlim     1.6.1
+promises               promises     1.0.1
+psych                     psych   1.8.3.3
+purrr                     purrr     0.2.4
+quantmod               quantmod    0.4-13
+quantreg               quantreg      5.33
+R.methodsS3         R.methodsS3     1.7.1
+R.oo                       R.oo    1.22.0
+R.utils                 R.utils     2.6.0
+R6                           R6     2.2.2
+randomForest       randomForest    4.6-12
+RANN                       RANN     2.5.1
+RColorBrewer       RColorBrewer     1.1-2
+Rcpp                       Rcpp   0.12.16
+RcppEigen             RcppEigen 0.3.3.3.0
+RcppParallel       RcppParallel    4.3.20
+RcppRoll               RcppRoll     0.2.2
+recipes                 recipes     0.1.2
+reshape2               reshape2     1.4.2
+rJava                     rJava     0.9-9
+rlang                     rlang     0.2.0
+robustbase           robustbase    0.92-8
+rstudioapi           rstudioapi       0.7
+scales                   scales     0.5.0
+sfsmisc                 sfsmisc     1.1-2
+shiny                     shiny     1.0.5
+shinycssloaders shinycssloaders     0.2.0
+shinydashboard   shinydashboard     0.7.0
+shinyjs                 shinyjs       1.0
+sourcetools         sourcetools     0.1.6
+SparseM                 SparseM      1.77
+SQUAREM                 SQUAREM 2017.10-1
+stringi                 stringi     1.1.7
+stringr                 stringr     1.3.1
+tibble                   tibble     1.3.3
+tidyr                     tidyr     0.8.0
+tidyselect           tidyselect     0.2.4
+timeDate               timeDate  3043.102
+tree                       tree    1.0-37
+TTR                         TTR    0.23-3
+unbalanced           unbalanced       2.0
+viridis                 viridis     0.5.1
+viridisLite         viridisLite     0.3.0
+whisker                 whisker     0.3-2
+withr                     withr     2.1.2
+xgboost                 xgboost    0.71.2
+xlsx                       xlsx     0.6.1
+xlsxjars               xlsxjars     0.6.1
+XML                         XML  3.98-1.9
+xtable                   xtable     1.8-2
+xts                         xts    0.10-2
+yaml                       yaml    2.1.18
+zoo                         zoo     1.8-0
+translations       translations     3.4.0
 	 
